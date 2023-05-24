@@ -27,7 +27,6 @@ class _HomeState extends State<Home> {
     final response = await dio
         .get(MyAPI.currentAddress(position.latitude, position.longitude));
     setState(() {
-      // print(response);
       if (response.statusCode == 200) {
         weather = WeatherAPI(
           id: response.data["current"]["weather"][0]["id"],
@@ -127,21 +126,26 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 100,
             ),
-            FittedBox(
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  weather!.description.replaceAll(" ", "\n"),
-                  style: TextStyle(color: MyColor.white, fontSize: 70),
+            Align(
+              alignment: Alignment.centerRight,
+              child: FittedBox(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    weather!.description.replaceAll(" ", "\n"),
+                    style: TextStyle(color: MyColor.white, fontSize: 70),
+                  ),
                 ),
               ),
             ),
-            FittedBox(
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(
-                  weather!.city,
-                  style: TextStyle(color: MyColor.white, fontSize: 80),
+            Expanded(
+              child: FittedBox(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    weather!.city,
+                    style: TextStyle(color: MyColor.white, fontSize: 80),
+                  ),
                 ),
               ),
             ),

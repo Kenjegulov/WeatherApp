@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_lesson9/constants/weather.dart';
 
 import '../constants/MyAPI.dart';
+import '../constants/MyWeather.dart';
 import '../model.dart';
 
 class MyFetchData {

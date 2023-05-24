@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_lesson9/constants/Citites.dart';
-import 'package:flutter_lesson9/constants/weather.dart';
 import 'package:geolocator/geolocator.dart';
 
 import '../constants/MyAPI.dart';
+import '../constants/MyWeather.dart';
 import '../model.dart';
 
 import 'package:flutter/material.dart';
